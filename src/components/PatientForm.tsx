@@ -110,7 +110,7 @@ export default function PatientForm() {
 
                 <input
                     type="submit"
-                    className="bg-cyan-600 w-full p-3 text-white uppercase font-bold hover:bg-indigo-700 cursor-pointer transition-colors"
+                    className="bg-cyan-600 w-full p-3 text-white uppercase font-bold hover:bg-cyan-700 cursor-pointer transition-colors"
                     value='Guardar Paciente'
                 />
             </form>
