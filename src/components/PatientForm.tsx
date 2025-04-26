@@ -1,12 +1,13 @@
 import { useForm } from "react-hook-form"
 import Error from "./Error";
+import { DraftPatient } from "../types";
 
 export default function PatientForm() {
 
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm<DraftPatient>();
 
-    const registerPatient = () => {
-        console.log('Nuevo Paciente')
+    const registerPatient = (data: DraftPatient) => {
+        console.log(data)
     }
 
     return (
@@ -36,7 +37,7 @@ export default function PatientForm() {
                             required: 'El nombre del paciente es obligatorio'
                         })}
                     />
-                    {errors.name && (<Error>{errors.name?.message?.toString()}</Error>)}
+                    {errors.name && (<Error>{errors.name?.message}</Error>)}
                 </div>
 
                 <div className="mb-5">
@@ -52,7 +53,7 @@ export default function PatientForm() {
                             required: 'El nombre del propietario es obligatorio'
                         })}
                     />
-                    {errors.caretaker && (<Error>{errors.caretaker?.message?.toString()}</Error>)}
+                    {errors.caretaker && (<Error>{errors.caretaker?.message}</Error>)}
                 </div>
 
                 <div className="mb-5">
@@ -72,7 +73,7 @@ export default function PatientForm() {
                             }
                         })}
                     />
-                    {errors.email && (<Error>{errors.email?.message?.toString()}</Error>)}
+                    {errors.email && (<Error>{errors.email?.message}</Error>)}
                 </div>
 
                 <div className="mb-5">
@@ -87,7 +88,7 @@ export default function PatientForm() {
                             required: 'La fecha de alta es obligatorio'
                         })}
                     />
-                    {errors.date && (<Error>{errors.date?.message?.toString()}</Error>)}
+                    {errors.date && (<Error>{errors.date?.message}</Error>)}
                 </div>
 
                 <div className="mb-5">
@@ -102,7 +103,7 @@ export default function PatientForm() {
                             required: 'Los síntomas son obligatorios'
                         })}
                     />
-                    {errors.symptoms && (<Error>{errors.symptoms?.message?.toString()}</Error>)}
+                    {errors.symptoms && (<Error>{errors.symptoms?.message}</Error>)}
                 </div>
 
                 <input
